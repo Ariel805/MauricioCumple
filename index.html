@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Invitación de Mauricio 🎂</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Particles Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Bouncing Ball Decoration -->
+    <div class="bouncing-ball" id="bouncing-ball">⚽</div>
+
+    <!-- ==================== ENVELOPE SCREEN ==================== -->
+    <div id="envelope-screen">
+        <div class="envelope-bg-stadium"></div>
+        <div class="envelope-grass-real"></div>
+
+        <div class="envelope-stage">
+            <div class="envelope-glow"></div>
+            <div class="envelope-wrapper" id="envelope">
+                <!-- Back & interior lining -->
+                <div class="envelope-back"></div>
+
+                <!-- Invitation card tucked inside -->
+                <div class="envelope-letter">
+                    <div class="letter-inner">
+                        <img src="mauriciofutbol.png" alt="Mauricio" class="letter-avatar">
+                        <span class="letter-badge">⚽ INVITACIÓN 🎂</span>
+                        <span class="letter-title">¡Cumpleaños de Mauricio!</span>
+                        <span class="letter-date">Sáb 28 Nov · 10:00 a.m.</span>
+                    </div>
+                </div>
+
+                <!-- Realistic front pocket folds -->
+                <div class="envelope-pocket">
+                    <div class="pocket-left"></div>
+                    <div class="pocket-right"></div>
+                    <div class="pocket-bottom"></div>
+                </div>
+
+                <!-- 3D Top Flap -->
+                <div class="envelope-flap">
+                    <div class="flap-front"></div>
+                    <div class="flap-inside"></div>
+                </div>
+
+                <!-- Wax Seal -->
+                <div class="envelope-seal-img" id="envelope-seal">
+                    <img src="waxsealM.png" alt="Sello" class="wax-seal-image">
+                </div>
+            </div>
+        </div>
+        <p class="tap-text" id="tap-text">✉️ Toca el sobre para abrir</p>
+        <canvas class="confetti-burst" id="confetti-canvas"></canvas>
+    </div>
+
+    <!-- ==================== MAIN INVITATION ==================== -->
+    <div id="invitation">
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-stadium-bg"></div>
+            <div class="field-decoration">
+                <div class="grass-texture-bg"></div>
+            </div>
+
+            <!-- Stadium lights -->
+            <div class="stadium-lights">
+                <div class="stadium-light"></div>
+                <div class="stadium-light"></div>
+                <div class="stadium-light"></div>
+                <div class="stadium-light"></div>
+            </div>
+
+            <!-- Semi-transparent background players (Hero) -->
+            <img src="cr7.png" alt="" class="bg-player bg-player-hero-left">
+            <img src="mbappe-Photoroom.png" alt="" class="bg-player bg-player-hero-right">
+
+            <!-- Floating soccer balls -->
+            <span class="soccer-ball" style="top:8%;left:5%;animation-delay:0s;font-size:1.5rem;">⚽</span>
+            <span class="soccer-ball" style="top:18%;right:8%;animation-delay:1s;font-size:1.2rem;">⚽</span>
+            <span class="soccer-ball" style="bottom:16%;left:8%;animation-delay:2s;font-size:2rem;">⚽</span>
+            <span class="soccer-ball" style="top:55%;right:4%;animation-delay:0.5s;font-size:1.5rem;">⚽</span>
+
+            <!-- Stars -->
+            <span class="star-deco" style="top:6%;right:12%;animation-delay:0s;">⭐</span>
+            <span class="star-deco" style="top:25%;left:10%;animation-delay:1s;">⭐</span>
+            <span class="star-deco" style="bottom:22%;right:10%;animation-delay:2s;">⭐</span>
+            <span class="star-deco" style="top:50%;left:15%;animation-delay:0.5s;">✨</span>
+
+            <!-- Birthday balloons decoration -->
+            <img src="birthdayballons.png" alt="" class="balloons-deco balloons-left">
+            <img src="birthdayballons.png" alt="" class="balloons-deco balloons-right">
+
+            <div class="hero-content">
+                <!-- World Cup logo -->
+                <div class="world-cup-badge reveal-scale">
+                    <img src="word cuplogo.webp" alt="World Cup 2026" class="worldcup-logo">
+                </div>
+
+                <div class="hero-image-container reveal-scale">
+                    <img src="mauriciofutbol.png" alt="Mauricio" class="hero-image">
+                    <img src="birthdayhat.png" alt="" class="birthday-hat-deco">
+                    <div class="hero-badge">
+                        <img src="ballondOrTrophy.png" alt="" class="badge-trophy">
+                    </div>
+                </div>
+
+                <h1 class="hero-title" id="typewriter" data-text="¡Hola, soy Mauricio!">¡Hola, soy Mauricio!</h1>
+
+                <p class="hero-subtitle">
+                    Te quiero invitar a una <strong>Reunión</strong><br>
+                    para celebrar mi <strong style="color: #ffd700;">Cumpleaños</strong> 🎂🎈
+                </p>
+            </div>
+
+            <!-- Intuitive Scroll Down Indicator -->
+            <button class="scroll-indicator" id="scroll-indicator" aria-label="Desliza hacia abajo">
+                <span class="scroll-text">Desliza hacia abajo</span>
+                <span class="scroll-arrows">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </span>
+            </button>
+        </section>
+
+        <!-- Mauricio con The Strongest (compacto) -->
+        <section class="strongest-section" id="strongest-section">
+            <!-- Semi-transparent background players -->
+            <img src="vizcarra.png" alt="" class="bg-player bg-player-mid-left">
+            <img src="dembele.png" alt="" class="bg-player bg-player-mid-right">
+
+            <div class="strongest-container reveal-scale">
+                <div class="strongest-card">
+                    <img src="the strongest logo.png" alt="The Strongest" class="strongest-logo-left">
+                    <div class="strongest-image-wrap">
+                        <img src="mauricio the stronguest.png" alt="Mauricio - The Strongest" class="strongest-image">
+                    </div>
+                    <img src="the strongest logo.png" alt="The Strongest" class="strongest-logo-right">
+                </div>
+                <p class="strongest-text reveal">⚽ Gracias por venir a mi <strong style="color: #ffd700;">Cumpleaños</strong>! 🐯</p>
+            </div>
+        </section>
+
+        <!-- Countdown -->
+        <section class="countdown-section">
+            <h2 class="countdown-title reveal">⏰ ¡Falta poco para la fiesta!</h2>
+            <div class="countdown-container reveal">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">Días</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Minutos</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Segundos</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Cards -->
+        <section class="info-section">
+            <!-- Semi-transparent background players (Info) -->
+            <img src="cr7-2.png" alt="" class="bg-player bg-player-info-left">
+            <img src="kvaratskhelia.png" alt="" class="bg-player bg-player-info-right">
+
+            <div class="info-container stagger-children">
+
+                <!-- Date & Time -->
+                <div class="info-card">
+                    <span class="info-card-icon">📅</span>
+                    <h3 class="info-card-title">¿Cuándo?</h3>
+                    <p class="info-card-text">
+                        <strong>Sábado 28 de Noviembre</strong><br>
+                        Desde las <strong>10:00 a.m.</strong><br>
+                        ¡Compartiremos toda una jornada llena de diversión y encuentro de amistad!
+                    </p>
+                </div>
+
+                <!-- Location + Interactive Map -->
+                <div class="info-card">
+                    <span class="info-card-icon">📍</span>
+                    <h3 class="info-card-title">¿Dónde?</h3>
+                    <p class="info-card-text">
+                        Zona Ballivián de El Alto<br>
+                        <strong>Av. Chacaltaya Nro. 620</strong>
+                    </p>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3825.787643933129!2d-68.170874!3d-16.486287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTbCsDI5JzEwLjYiUyA2OMKwMTAnMTUuMiJX!5e0!3m2!1ses-419!2sbo!4v1794945623985!5m2!1ses-419!2sbo" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="strict-origin-when-cross-origin">
+                        </iframe>
+                    </div>
+                    <a href="https://maps.app.goo.gl/ANpegqouvWgRp6GH8" target="_blank" class="map-link">
+                        🗺️ Abrir en Google Maps
+                    </a>
+                </div>
+
+                <!-- How to Get There -->
+                <div class="info-card">
+                    <span class="info-card-icon">🚌</span>
+                    <h3 class="info-card-title">¿Cómo llegar?</h3>
+                    <div class="transport-tips">
+                        <p>🚡 Puedes tomar el <strong>Teleférico Rojo</strong> hasta la estación de la feria 16 de Julio y de ahí tomar un trufi.</p>
+                        <p>🚐 También puedes tomar minibuses que suben por la <strong>Calle Max Paredes</strong> que digan <strong>"Ballivián"</strong>.</p>
+                        <p>👨‍👩‍👦 ¡Mi familia estará atenta para ayudarte a llegar!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP Section -->
+        <section class="rsvp-section">
+            <div class="reveal-scale">
+                <button class="rsvp-btn" id="rsvp-btn">
+                    🎉 ¡Sí, voy a ir!
+                </button>
+                <p class="rsvp-message" id="rsvp-message">
+                    🥳 ¡Genial! Mauricio te estará esperando ⚽🎂<br>
+                    <a class="rsvp-wa-fallback" href="https://wa.me/59176210801?text=%C2%A1Hola!%20Confirmo%20mi%20asistencia%20al%20cumplea%C3%B1os%20de%20Mauricio%20el%20s%C3%A1bado%2028%20de%20noviembre.%20%C2%A1Nos%20vemos%20ah%C3%AD!" target="_blank" rel="noopener noreferrer">
+                        💬 Si no se abrió WhatsApp, toca aquí
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section class="footer-section">
+            <p class="footer-message reveal">
+                <strong style="color: #ffd700;">¡No faltes!</strong><br>
+                Te estaré esperando 🤗<br>
+                Aprovecharemos para desearnos una <strong>feliz vacación</strong> esperando encontrarnos el siguiente año.
+            </p>
+            <div class="footer-emoji reveal-scale">⚽🎉🎂</div>
+        </section>
+    </div>
+
+    <!-- ==================== BOTTOM AUDIO VISUALIZER ==================== -->
+    <canvas id="audio-visualizer" class="audio-visualizer"></canvas>
+
+    <!-- ==================== MUSIC PLAYER ==================== -->
+    <div class="music-player-container" id="music-player">
+        <div class="turntable" id="turntable-btn" title="Play / Pausa">
+            <div class="vinyl" id="vinyl"></div>
+            <span class="player-label">♪ música</span>
+        </div>
+    </div>
+
+    <audio id="bg-music" loop preload="auto">
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="whistle-sound" preload="auto">
+        <source src="whistle.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
