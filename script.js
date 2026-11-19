@@ -379,11 +379,11 @@
     });
     audio.addEventListener('pause', () => vinyl.classList.remove('spinning'));
 
-    // ===================== COUNTDOWN =====================
+    // ===================== COUNTDOWN (CUMPLEAÑOS - 9:30 AM) =====================
     const prevValues = { days: '', hours: '', minutes: '', seconds: '' };
 
     function updateCountdown() {
-        const target = new Date('2026-11-28T10:00:00-04:00').getTime();
+        const target = new Date('2026-11-28T09:30:00-04:00').getTime();
         const now = Date.now();
         const diff = target - now;
 
@@ -424,6 +424,52 @@
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
+
+    // ===================== COUNTDOWN (FINAL LIBERTADORES - 16:00 PM) =====================
+    const prevLibValues = { 'lib-days': '', 'lib-hours': '', 'lib-minutes': '', 'lib-seconds': '' };
+
+    function updateLibertadoresCountdown() {
+        const targetLib = new Date('2026-11-28T16:00:00-04:00').getTime();
+        const now = Date.now();
+        const diff = targetLib - now;
+
+        const ids = ['lib-days', 'lib-hours', 'lib-minutes', 'lib-seconds'];
+
+        if (diff <= 0) {
+            const emojis = ['🏆', '⚽', '🔥', '🎉'];
+            ids.forEach((id, i) => {
+                const el = document.getElementById(id);
+                if (el) el.textContent = emojis[i];
+            });
+            return;
+        }
+
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+
+        const values = {
+            'lib-days': String(d).padStart(2, '0'),
+            'lib-hours': String(h).padStart(2, '0'),
+            'lib-minutes': String(m).padStart(2, '0'),
+            'lib-seconds': String(s).padStart(2, '0')
+        };
+
+        ids.forEach(id => {
+            const el = document.getElementById(id);
+            if (el && values[id] !== prevLibValues[id]) {
+                el.textContent = values[id];
+                el.classList.remove('flip');
+                void el.offsetWidth;
+                el.classList.add('flip');
+                prevLibValues[id] = values[id];
+            }
+        });
+    }
+
+    updateLibertadoresCountdown();
+    setInterval(updateLibertadoresCountdown, 1000);
 
     // ===================== SCROLL ANIMATIONS =====================
     function triggerScrollAnimations() {
@@ -488,7 +534,7 @@
     const rsvpBtn = document.getElementById('rsvp-btn');
     const rsvpMsg = document.getElementById('rsvp-message');
     const WHATSAPP_NUMBER = '59176210801';
-    const WHATSAPP_TEXT = '¡Hola! Confirmo mi asistencia al cumpleaños de Mauricio el sábado 28 de noviembre. ¡Nos vemos ahí!';
+    const WHATSAPP_TEXT = '¡Hola! Confirmo mi asistencia al cumpleaños de Mauricio el sábado 28 de noviembre a las 9:30 a.m. ¡Nos vemos ahí!';
     const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_TEXT)}`;
 
     if (rsvpBtn) {
@@ -513,13 +559,13 @@
 
     // ===================== SCROLL INDICATOR =====================
     const scrollIndicator = document.getElementById('scroll-indicator');
-    const strongestSection = document.getElementById('strongest-section');
+    const nextSection = document.getElementById('carousel-section');
 
     if (scrollIndicator) {
         scrollIndicator.addEventListener('click', function (e) {
             e.stopPropagation();
-            if (strongestSection) {
-                strongestSection.scrollIntoView({ behavior: 'smooth' });
+            if (nextSection) {
+                nextSection.scrollIntoView({ behavior: 'smooth' });
             }
         });
 
@@ -565,6 +611,82 @@
                 setTimeout(() => spark.remove(), 600);
             }
         }, { passive: true });
+    }
+
+    // ===================== PHOTO/VIDEO CAROUSEL =====================
+    const track = document.getElementById('carousel-track');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    const dotsContainer = document.getElementById('carousel-dots');
+
+    if (track && prevBtn && nextBtn && dotsContainer) {
+        const slides = track.querySelectorAll('.carousel-slide');
+        const total = slides.length;
+        let current = 0;
+        let startX = 0;
+        let isDragging = false;
+
+        // Create dots
+        for (let i = 0; i < total; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', `Foto ${i + 1}`);
+            dot.addEventListener('click', () => goTo(i));
+            dotsContainer.appendChild(dot);
+        }
+        const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+        function goTo(index) {
+            if (index < 0) index = total - 1;
+            if (index >= total) index = 0;
+            current = index;
+            track.style.transform = `translateX(-${current * 100}%)`;
+
+            // Update dots
+            dots.forEach((d, i) => d.classList.toggle('active', i === current));
+
+            // Auto play/pause videos
+            slides.forEach((slide, i) => {
+                const video = slide.querySelector('video');
+                if (video) {
+                    if (i === current) {
+                        video.play().catch(() => {});
+                    } else {
+                        video.pause();
+                        video.currentTime = 0;
+                    }
+                }
+            });
+        }
+
+        prevBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(current - 1); });
+        nextBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(current + 1); });
+
+        // Touch swipe support
+        track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+        }, { passive: true });
+
+        track.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+            const diff = startX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) {
+                goTo(diff > 0 ? current + 1 : current - 1);
+            }
+        }, { passive: true });
+
+        // Auto-advance every 5s
+        let autoSlide = setInterval(() => goTo(current + 1), 5000);
+
+        // Pause auto on user interaction
+        [prevBtn, nextBtn, track].forEach(el => {
+            el.addEventListener('pointerdown', () => {
+                clearInterval(autoSlide);
+                autoSlide = setInterval(() => goTo(current + 1), 8000);
+            });
+        });
     }
 
 })();

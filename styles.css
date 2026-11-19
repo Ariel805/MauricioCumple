@@ -8,6 +8,10 @@
     --gold-dark: #ffb300;
     --white: #ffffff;
     --dark: #1a1a2e;
+    /* Mundial 2026 accents */
+    --mundial-teal: #00bfa5;
+    --mundial-blue: #1a237e;
+    --mundial-magenta: #c2185b;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -377,26 +381,26 @@ body {
 }
 
 .bg-player-hero-right {
-    right: -18px;
-    bottom: 10%;
-    width: 135px;
+    right: -25px;
+    bottom: 8%;
+    width: 160px;
     animation-delay: 1.4s;
 }
 
 .bg-player-mid-left {
-    left: -16px;
+    left: -25px;
     top: 50%;
     transform: translateY(-50%);
-    width: 125px;
+    width: 170px;
     animation-name: float-player-mid;
     animation-delay: 0.6s;
 }
 
 .bg-player-mid-right {
-    right: -16px;
+    right: -25px;
     top: 50%;
     transform: translateY(-50%);
-    width: 125px;
+    width: 170px;
     animation-name: float-player-mid;
     animation-delay: 2s;
 }
@@ -416,20 +420,20 @@ body {
 }
 
 @media (min-width: 768px) {
-    .bg-player { opacity: 0.2; }
-    .bg-player-hero-left { left: 24px; width: 210px; }
-    .bg-player-hero-right { right: 24px; width: 210px; }
-    .bg-player-mid-left { left: 28px; width: 185px; }
-    .bg-player-mid-right { right: 28px; width: 185px; }
+    .bg-player { opacity: 0.22; }
+    .bg-player-hero-left { left: 24px; width: 200px; }
+    .bg-player-hero-right { right: 15px; width: 280px; }
+    .bg-player-mid-left { left: 20px; width: 280px; }
+    .bg-player-mid-right { right: 20px; width: 280px; }
     .bg-player-info-left { left: 16px; width: 210px; }
     .bg-player-info-right { right: 16px; width: 210px; }
 }
 
 @media (min-width: 1200px) {
-    .bg-player-hero-left { left: 6%; width: 240px; }
-    .bg-player-hero-right { right: 6%; width: 240px; }
-    .bg-player-mid-left { left: 6%; width: 210px; }
-    .bg-player-mid-right { right: 6%; width: 210px; }
+    .bg-player-hero-left { left: 6%; width: 230px; }
+    .bg-player-hero-right { right: 4%; width: 340px; }
+    .bg-player-mid-left { left: 4%; width: 340px; }
+    .bg-player-mid-right { right: 4%; width: 340px; }
     .bg-player-info-left { left: 3%; width: 230px; }
     .bg-player-info-right { right: 3%; width: 230px; }
 }
@@ -518,7 +522,41 @@ body {
 
 /* World Cup badge */
 .world-cup-badge {
-    margin-bottom: 22px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.world-cup-pill {
+    display: inline-block;
+    padding: 4px 14px;
+    background: linear-gradient(90deg, rgba(0, 191, 165, 0.25), rgba(255, 215, 0, 0.25));
+    border: 1px solid rgba(255, 215, 0, 0.45);
+    border-radius: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--gold);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(6px);
+}
+
+.matchday-badge {
+    display: inline-block;
+    margin-bottom: 8px;
+    padding: 3px 12px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 191, 165, 0.5);
+    border-radius: 14px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    color: var(--mundial-teal);
+    text-transform: uppercase;
 }
 
 .worldcup-logo {
@@ -553,7 +591,7 @@ body {
     width: 185px; height: 185px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: top;
+    object-position: center 20%;
     border: 5px solid var(--gold);
     box-shadow: 0 0 40px rgba(255,215,0,0.3), 0 0 80px rgba(255,215,0,0.1);
     animation: float-image 4s ease-in-out infinite;
@@ -576,9 +614,9 @@ body {
 /* Birthday hat sized & placed naturally on top of Mauricio's head */
 .birthday-hat-deco {
     position: absolute;
-    top: -34px;
-    left: 48%;
-    transform: translateX(-50%) rotate(-10deg);
+    top: -28px;
+    left: 47%;
+    transform: translateX(-50%) rotate(-8deg);
     width: 44px;
     height: auto;
     z-index: 10;
@@ -589,8 +627,8 @@ body {
 
 @media (min-width: 768px) {
     .birthday-hat-deco {
-        width: 56px;
-        top: -44px;
+        width: 54px;
+        top: -36px;
     }
 }
 
@@ -765,81 +803,183 @@ body {
     opacity: 0.4;
 }
 
-/* ===================== THE STRONGEST SECTION (COMPACT) ===================== */
-.strongest-section {
-    padding: 40px 20px;
-    background: linear-gradient(180deg, #0a1a0d 0%, #1a1a2e 50%, #1a1a2e 100%);
+/* ===================== PHOTO/VIDEO CAROUSEL ===================== */
+.carousel-section {
+    padding: 48px 20px 40px;
+    background: linear-gradient(180deg, #0a1a0d 0%, #121f30 50%, #1a1a2e 100%);
     text-align: center;
     overflow: hidden;
     position: relative;
 }
 
-.strongest-container {
-    max-width: 390px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-}
-
-.strongest-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    padding: 18px 20px;
-    background: linear-gradient(145deg, rgba(255,215,0,0.09), rgba(0,0,0,0.38));
-    border: 2px solid rgba(255,215,0,0.28);
-    border-radius: 22px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-    backdrop-filter: blur(8px);
-    transition: border-color 0.3s ease, transform 0.3s ease;
-}
-
-.strongest-card:hover {
-    border-color: var(--gold);
-    transform: translateY(-4px);
-}
-
-.strongest-logo-left,
-.strongest-logo-right {
-    width: 44px; height: auto;
-    filter: drop-shadow(0 2px 8px rgba(255,215,0,0.35));
-    flex-shrink: 0;
-}
-
-@media (min-width: 768px) {
-    .strongest-container { max-width: 440px; }
-    .strongest-logo-left,
-    .strongest-logo-right { width: 58px; }
-}
-
-.strongest-image-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.strongest-image {
-    height: 195px;
-    width: auto;
-    max-width: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 6px 18px rgba(255, 215, 0, 0.28));
-}
-
-@media (min-width: 768px) {
-    .strongest-image { height: 235px; }
-}
-
-.strongest-text {
+.carousel-title {
     font-family: 'Fredoka One', cursive;
-    font-size: 1.15rem;
-    color: var(--white);
-    margin-top: 16px;
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.carousel-title-logo {
+    width: 36px;
+    height: auto;
+    vertical-align: middle;
+    filter: drop-shadow(0 2px 6px rgba(255,215,0,0.35));
 }
 
 @media (min-width: 768px) {
-    .strongest-text { font-size: 1.35rem; }
+    .carousel-title { font-size: 2rem; }
+    .carousel-title-logo { width: 44px; }
+}
+
+.carousel-wrapper {
+    position: relative;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+@media (min-width: 768px) {
+    .carousel-wrapper { max-width: 520px; gap: 10px; }
+}
+
+.carousel-track-container {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 18px;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.5);
+    background: #000;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.carousel-slide {
+    position: relative;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 4 / 5;
+    background: radial-gradient(circle at center, #162638 0%, #080f14 100%);
+    overflow: hidden;
+}
+
+.carousel-slide-portrait {
+    background: radial-gradient(circle at center, #1b3824 0%, #0a170e 70%, #050a06 100%);
+}
+
+.carousel-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.carousel-slide-portrait .carousel-media {
+    object-fit: contain;
+    padding: 12px 10px 38px;
+    filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.7));
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(11, 23, 35, 0.85);
+    border: 1px solid rgba(255, 215, 0, 0.35);
+    backdrop-filter: blur(8px);
+    color: var(--white);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.78rem;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    pointer-events: none;
+}
+
+@media (min-width: 768px) {
+    .carousel-caption {
+        font-size: 0.9rem;
+        padding: 6px 18px;
+        bottom: 14px;
+    }
+}
+
+.carousel-video {
+    object-fit: contain;
+    background: #000;
+}
+
+/* Nav buttons */
+.carousel-btn {
+    flex-shrink: 0;
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 215, 0, 0.4);
+    background: rgba(10, 26, 13, 0.75);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition: all 0.25s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 215, 0, 0.2);
+    border-color: var(--gold);
+    transform: scale(1.1);
+}
+
+.carousel-btn:active { transform: scale(0.92); }
+
+@media (min-width: 768px) {
+    .carousel-btn { width: 44px; height: 44px; }
+}
+
+/* Dots */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+
+.carousel-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1.5px solid rgba(255, 215, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carousel-dot.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    transform: scale(1.25);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 /* ===================== COUNTDOWN ===================== */
@@ -1284,8 +1424,7 @@ body {
 
 .bouncing-ball {
     position: fixed;
-    top: 10px; right: 10px;
-    font-size: 1.5rem;
+    top: 12px; right: 12px;
     z-index: 998;
     pointer-events: none;
     opacity: 0;
@@ -1293,8 +1432,36 @@ body {
 }
 
 .bouncing-ball.visible {
-    opacity: 0.3;
-    animation: ball-bounce-across 12s linear infinite;
+    opacity: 0.75;
+    animation: ball-bounce-across 14s linear infinite;
+}
+
+.bouncing-ball-img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+    animation: ball-spin 3s linear infinite;
+}
+
+@keyframes ball-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.floating-ball {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+    opacity: 0.38;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
+    animation: float-ball-worldcup 6s ease-in-out infinite;
+}
+
+@keyframes float-ball-worldcup {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-18px) rotate(180deg); }
 }
 
 @keyframes ball-bounce-across {
@@ -1303,4 +1470,176 @@ body {
     50% { transform: translateX(-50vw) translateY(0) rotate(720deg); }
     75% { transform: translateX(-75vw) translateY(20px) rotate(1080deg); }
     100% { transform: translateX(-100vw) translateY(0) rotate(1440deg); }
+}
+
+/* ===================== FINAL COPA LIBERTADORES ===================== */
+.libertadores-section {
+    position: relative;
+    padding: 65px 20px 75px;
+    background: #09090c;
+    overflow: hidden;
+    text-align: center;
+}
+
+.libertadores-bg {
+    position: absolute;
+    inset: 0;
+    background: url('fondolibertadores.jpg') center/cover no-repeat;
+    opacity: 0.3;
+    filter: brightness(0.9) contrast(1.15);
+    transform: scale(1.04);
+}
+
+.libertadores-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255, 215, 0, 0.09) 0%, rgba(10, 10, 15, 0.78) 55%, #09090c 100%);
+    pointer-events: none;
+}
+
+.libertadores-container {
+    position: relative;
+    z-index: 3;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.libertadores-badge-wrap {
+    margin-bottom: 16px;
+}
+
+.libertadores-pill {
+    display: inline-block;
+    padding: 6px 18px;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.22), rgba(0, 0, 0, 0.85));
+    border: 1.5px solid var(--gold);
+    border-radius: 30px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.85rem;
+    letter-spacing: 0.8px;
+    color: var(--gold);
+    box-shadow: 0 4px 18px rgba(255, 215, 0, 0.35);
+    text-shadow: 0 1px 4px rgba(0,0,0,0.9);
+}
+
+.libertadores-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.6rem;
+    color: #fff;
+    text-shadow: 0 2px 14px rgba(255, 215, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.3);
+    margin-bottom: 12px;
+    line-height: 1.25;
+}
+
+@media (min-width: 768px) {
+    .libertadores-title { font-size: 2.3rem; }
+    .libertadores-pill { font-size: 1rem; }
+}
+
+.libertadores-time {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--gold);
+    margin-bottom: 16px;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.8);
+}
+
+.libertadores-desc {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.98rem;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1.7;
+    margin-bottom: 28px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .libertadores-desc { font-size: 1.12rem; }
+}
+
+.libertadores-countdown-card {
+    background: linear-gradient(145deg, rgba(30, 24, 10, 0.72), rgba(12, 10, 6, 0.92));
+    border: 2px solid rgba(255, 215, 0, 0.45);
+    border-radius: 22px;
+    padding: 24px 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 215, 0, 0.18);
+    backdrop-filter: blur(10px);
+}
+
+.libertadores-countdown-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.05rem;
+    color: var(--gold);
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+}
+
+@media (min-width: 768px) {
+    .libertadores-countdown-title { font-size: 1.25rem; }
+}
+
+.countdown-item-gold {
+    background: linear-gradient(145deg, rgba(80, 62, 15, 0.55), rgba(30, 22, 6, 0.85)) !important;
+    border: 2px solid rgba(255, 215, 0, 0.55) !important;
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.18), inset 0 1px 2px rgba(255, 255, 255, 0.25) !important;
+}
+
+.countdown-item-gold:hover {
+    border-color: #fff !important;
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4) !important;
+}
+
+.bg-trophy-float {
+    position: absolute;
+    width: 90px;
+    height: auto;
+    opacity: 0.18;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+    filter: drop-shadow(0 4px 14px rgba(255, 215, 0, 0.3));
+    animation: float-player 8s ease-in-out infinite;
+}
+
+.bg-trophy-left {
+    left: -10px;
+    top: 20%;
+}
+
+.bg-strongest-float {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    opacity: 0.16;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+    filter: drop-shadow(0 4px 14px rgba(255, 215, 0, 0.3));
+    animation: float-player 7s ease-in-out infinite 1s;
+}
+
+.bg-strongest-right {
+    right: -10px;
+    bottom: 18%;
+}
+
+.lib-ball-1 {
+    top: 10%;
+    right: 12%;
+    width: 32px;
+}
+
+.lib-ball-2 {
+    bottom: 12%;
+    left: 10%;
+    width: 36px;
+    animation-delay: 2s;
+}
+
+@media (min-width: 768px) {
+    .bg-trophy-left { left: 40px; width: 140px; opacity: 0.22; }
+    .bg-strongest-right { right: 40px; width: 120px; opacity: 0.22; }
 }

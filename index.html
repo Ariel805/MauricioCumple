@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎉 Invitación de Mauricio 🎂</title>
+    <title>⚽ Invitación Mundial - Mauricio 🏆</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -14,7 +14,9 @@
     <canvas id="particles-canvas"></canvas>
 
     <!-- Bouncing Ball Decoration -->
-    <div class="bouncing-ball" id="bouncing-ball">⚽</div>
+    <div class="bouncing-ball" id="bouncing-ball">
+        <img src="balonmundial.webp" alt="Balón Mundial 2026" class="bouncing-ball-img">
+    </div>
 
     <!-- ==================== ENVELOPE SCREEN ==================== -->
     <div id="envelope-screen">
@@ -30,10 +32,10 @@
                 <!-- Invitation card tucked inside -->
                 <div class="envelope-letter">
                     <div class="letter-inner">
-                        <img src="mauriciofutbol.png" alt="Mauricio" class="letter-avatar">
-                        <span class="letter-badge">⚽ INVITACIÓN 🎂</span>
+                        <img src="mauricara22.png" alt="Mauricio" class="letter-avatar">
+                        <span class="letter-badge">⚽ INVITACIÓN MUNDIAL 🎂</span>
                         <span class="letter-title">¡Cumpleaños de Mauricio!</span>
-                        <span class="letter-date">Sáb 28 Nov · 10:00 a.m.</span>
+                        <span class="letter-date">Sáb 28 Nov · 9:30 a.m.</span>
                     </div>
                 </div>
 
@@ -79,14 +81,14 @@
             </div>
 
             <!-- Semi-transparent background players (Hero) -->
-            <img src="cr7.png" alt="" class="bg-player bg-player-hero-left">
-            <img src="mbappe-Photoroom.png" alt="" class="bg-player bg-player-hero-right">
+            <img src="mbappemundial.png" alt="" class="bg-player bg-player-hero-left">
+            <img src="portugalequipo.png" alt="" class="bg-player bg-player-hero-right">
 
-            <!-- Floating soccer balls -->
-            <span class="soccer-ball" style="top:8%;left:5%;animation-delay:0s;font-size:1.5rem;">⚽</span>
-            <span class="soccer-ball" style="top:18%;right:8%;animation-delay:1s;font-size:1.2rem;">⚽</span>
-            <span class="soccer-ball" style="bottom:16%;left:8%;animation-delay:2s;font-size:2rem;">⚽</span>
-            <span class="soccer-ball" style="top:55%;right:4%;animation-delay:0.5s;font-size:1.5rem;">⚽</span>
+            <!-- Floating official soccer balls -->
+            <img src="balonmundial.webp" alt="" class="floating-ball" style="top:8%;left:5%;animation-delay:0s;width:32px;">
+            <img src="balonmundial.webp" alt="" class="floating-ball" style="top:18%;right:7%;animation-delay:1.2s;width:28px;">
+            <img src="balonmundial.webp" alt="" class="floating-ball" style="bottom:15%;left:8%;animation-delay:2.4s;width:38px;">
+            <img src="balonmundial.webp" alt="" class="floating-ball" style="top:52%;right:4%;animation-delay:0.8s;width:30px;">
 
             <!-- Stars -->
             <span class="star-deco" style="top:6%;right:12%;animation-delay:0s;">⭐</span>
@@ -101,11 +103,12 @@
             <div class="hero-content">
                 <!-- World Cup logo -->
                 <div class="world-cup-badge reveal-scale">
-                    <img src="word cuplogo.webp" alt="World Cup 2026" class="worldcup-logo">
+                    <span class="world-cup-pill">🏆 COPA MUNDIAL 2026 · EDICIÓN ESPECIAL ⚽</span>
+                    <img src="logomundial.webp" alt="World Cup 2026" class="worldcup-logo">
                 </div>
 
                 <div class="hero-image-container reveal-scale">
-                    <img src="mauriciofutbol.png" alt="Mauricio" class="hero-image">
+                    <img src="mauricara22.png" alt="Mauricio" class="hero-image">
                     <img src="birthdayhat.png" alt="" class="birthday-hat-deco">
                     <div class="hero-badge">
                         <img src="ballondOrTrophy.png" alt="" class="badge-trophy">
@@ -134,26 +137,75 @@
             </button>
         </section>
 
-        <!-- Mauricio con The Strongest (compacto) -->
-        <section class="strongest-section" id="strongest-section">
+        <!-- Photo & Video Carousel: Yo soy Mauricio -->
+        <section class="carousel-section" id="carousel-section">
             <!-- Semi-transparent background players -->
-            <img src="vizcarra.png" alt="" class="bg-player bg-player-mid-left">
-            <img src="dembele.png" alt="" class="bg-player bg-player-mid-right">
+            <img src="espanaequipo.png" alt="" class="bg-player bg-player-mid-left">
+            <img src="inglaterraequipo.png" alt="" class="bg-player bg-player-mid-right">
 
-            <div class="strongest-container reveal-scale">
-                <div class="strongest-card">
-                    <img src="the strongest logo.png" alt="The Strongest" class="strongest-logo-left">
-                    <div class="strongest-image-wrap">
-                        <img src="mauricio the stronguest.png" alt="Mauricio - The Strongest" class="strongest-image">
+            <h2 class="carousel-title reveal">
+                <img src="logomundial.webp" alt="" class="carousel-title-logo">
+                Yo soy Mauricio
+            </h2>
+
+            <div class="carousel-wrapper reveal-scale">
+                <button class="carousel-btn carousel-prev" id="carousel-prev" aria-label="Anterior">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+
+                <div class="carousel-track-container">
+                    <div class="carousel-track" id="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="mauricioconcr7.jpeg" alt="Mauricio con Cristiano Ronaldo" class="carousel-media">
+                            <span class="carousel-caption">⚽ Con Cristiano Ronaldo CR7</span>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="maurifutbol.jpeg" alt="Mauricio Fútbol" class="carousel-media">
+                            <span class="carousel-caption">🥅 En la cancha de fútbol</span>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="mauricumple.jpeg" alt="Mauricio Cumpleaños" class="carousel-media">
+                            <span class="carousel-caption">🎂 Festejando mi cumple</span>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="mauriviaje.jpeg" alt="Mauricio Viaje" class="carousel-media">
+                            <span class="carousel-caption">✈️ De viaje y aventuras</span>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="mauriajedrez.jpeg" alt="Mauricio Ajedrez" class="carousel-media">
+                            <span class="carousel-caption">♟️ Pasión por el ajedrez</span>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="mauriajedrez2.jpeg" alt="Mauricio Ajedrez 2" class="carousel-media">
+                            <span class="carousel-caption">🧠 Estrategia y concentración</span>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="mauriajedrez3.jpeg" alt="Mauricio Ajedrez 3" class="carousel-media">
+                            <span class="carousel-caption">🏆 Torneo de ajedrez</span>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="mauricompeticion.jpeg" alt="Mauricio Competición" class="carousel-media">
+                            <span class="carousel-caption">🥇 Día de competición y medalla</span>
+                        </div>
+                        <div class="carousel-slide carousel-slide-video">
+                            <video src="maurivideo.mp4" class="carousel-media carousel-video" muted playsinline loop></video>
+                            <span class="carousel-caption">🎬 En acción</span>
+                        </div>
                     </div>
-                    <img src="the strongest logo.png" alt="The Strongest" class="strongest-logo-right">
                 </div>
-                <p class="strongest-text reveal">⚽ Gracias por venir a mi <strong style="color: #ffd700;">Cumpleaños</strong>! 🐯</p>
+
+                <button class="carousel-btn carousel-next" id="carousel-next" aria-label="Siguiente">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
             </div>
+
+            <!-- Carousel dots -->
+            <div class="carousel-dots" id="carousel-dots"></div>
         </section>
 
         <!-- Countdown -->
         <section class="countdown-section">
+            <span class="matchday-badge reveal">⏱️ CONVOCATORIA OFICIAL · MATCHDAY (9:30 A.M.)</span>
             <h2 class="countdown-title reveal">⏰ ¡Falta poco para la fiesta!</h2>
             <div class="countdown-container reveal">
                 <div class="countdown-item">
@@ -175,6 +227,58 @@
             </div>
         </section>
 
+        <!-- ==================== FINAL COPA LIBERTADORES ==================== -->
+        <section class="libertadores-section" id="libertadores-section">
+            <div class="libertadores-bg"></div>
+            <div class="libertadores-overlay"></div>
+
+            <!-- Animated decorative elements -->
+            <img src="ballondOrTrophy.png" alt="" class="bg-trophy-float bg-trophy-left">
+            <img src="the strongest logo.png" alt="" class="bg-strongest-float bg-strongest-right">
+            <img src="balonmundial.webp" alt="" class="floating-ball lib-ball-1">
+            <img src="balonmundial.webp" alt="" class="floating-ball lib-ball-2">
+
+            <div class="libertadores-container reveal-scale">
+                <div class="libertadores-badge-wrap">
+                    <span class="libertadores-pill">🏆 CONMEBOL LIBERTADORES · LA GRAN FINAL ⚽</span>
+                </div>
+
+                <h2 class="libertadores-title">¡ESE DÍA VEREMOS LA FINAL EN VIVO!</h2>
+
+                <p class="libertadores-time">
+                    ⭐ <strong>Sábado 28 de Noviembre · 16:00 (4:00 p.m.)</strong> ⭐
+                </p>
+
+                <p class="libertadores-desc">
+                    ¡La emoción será doble! Además de celebrar mi cumpleaños durante toda la jornada, 
+                    <strong>a las 16:00 nos reuniremos a ver la Gran Final de la Copa Libertadores</strong> 
+                    en pantalla gigante para vivir juntos la pasión del fútbol. 🏆📺🔥
+                </p>
+
+                <div class="libertadores-countdown-card">
+                    <h3 class="libertadores-countdown-title">⏱️ CUENTA REGRESIVA PARA LA FINAL (16:00)</h3>
+                    <div class="countdown-container">
+                        <div class="countdown-item countdown-item-gold">
+                            <span class="countdown-number" id="lib-days">00</span>
+                            <span class="countdown-label">Días</span>
+                        </div>
+                        <div class="countdown-item countdown-item-gold">
+                            <span class="countdown-number" id="lib-hours">00</span>
+                            <span class="countdown-label">Horas</span>
+                        </div>
+                        <div class="countdown-item countdown-item-gold">
+                            <span class="countdown-number" id="lib-minutes">00</span>
+                            <span class="countdown-label">Minutos</span>
+                        </div>
+                        <div class="countdown-item countdown-item-gold">
+                            <span class="countdown-number" id="lib-seconds">00</span>
+                            <span class="countdown-label">Segundos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Info Cards -->
         <section class="info-section">
             <!-- Semi-transparent background players (Info) -->
@@ -189,8 +293,8 @@
                     <h3 class="info-card-title">¿Cuándo?</h3>
                     <p class="info-card-text">
                         <strong>Sábado 28 de Noviembre</strong><br>
-                        Desde las <strong>10:00 a.m.</strong><br>
-                        ¡Compartiremos toda una jornada llena de diversión y encuentro de amistad!
+                        Estaremos reunidos desde las <strong>9:30 a.m.</strong><br>
+                        ¡Compartiremos toda una jornada llena de diversión y encuentro de amistad, y a las <strong>16:00 (4:00 p.m.)</strong> disfrutaremos juntos la <strong>Gran Final de la Copa Libertadores</strong>!
                     </p>
                 </div>
 
@@ -236,7 +340,7 @@
                 </button>
                 <p class="rsvp-message" id="rsvp-message">
                     🥳 ¡Genial! Mauricio te estará esperando ⚽🎂<br>
-                    <a class="rsvp-wa-fallback" href="https://wa.me/59176210801?text=%C2%A1Hola!%20Confirmo%20mi%20asistencia%20al%20cumplea%C3%B1os%20de%20Mauricio%20el%20s%C3%A1bado%2028%20de%20noviembre.%20%C2%A1Nos%20vemos%20ah%C3%AD!" target="_blank" rel="noopener noreferrer">
+                    <a class="rsvp-wa-fallback" href="https://wa.me/59176210801?text=%C2%A1Hola!%20Confirmo%20mi%20asistencia%20al%20cumplea%C3%B1os%20de%20Mauricio%20el%20s%C3%A1bado%2028%20de%20noviembre%20a%20las%209:30%20a.m.%20%C2%A1Nos%20vemos%20ah%C3%AD!" target="_blank" rel="noopener noreferrer">
                         💬 Si no se abrió WhatsApp, toca aquí
                     </a>
                 </p>
