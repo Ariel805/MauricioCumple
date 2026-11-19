@@ -693,6 +693,71 @@ body {
     .hero-subtitle { font-size: 1.35rem; }
 }
 
+/* High-visibility Hero Date & Time Pill */
+.hero-datetime-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 16px auto 0;
+    padding: 10px 22px;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.18), rgba(10, 35, 18, 0.85));
+    border: 2px solid var(--gold);
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 215, 0, 0.35), inset 0 0 15px rgba(255, 215, 0, 0.12);
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-datetime-pill:hover {
+    transform: scale(1.04);
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.5), 0 0 35px rgba(255, 215, 0, 0.5);
+}
+
+.hdp-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.hdp-icon {
+    font-size: 1.25rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+.hdp-text {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.hdp-dot {
+    color: var(--gold);
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+}
+
+.hdp-time-item .hdp-text {
+    color: var(--gold);
+    font-size: 1.15rem;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+@media (min-width: 768px) {
+    .hero-datetime-pill {
+        padding: 12px 28px;
+        gap: 14px;
+        margin-top: 20px;
+    }
+    .hdp-text { font-size: 1.2rem; }
+    .hdp-time-item .hdp-text { font-size: 1.3rem; }
+    .hdp-icon { font-size: 1.4rem; }
+}
+
 /* Intuitive Scroll Down Indicator */
 .scroll-indicator {
     position: absolute;
@@ -1124,6 +1189,149 @@ body {
     .info-card { padding: 40px 35px; }
     .info-card-title { font-size: 1.5rem; }
     .info-card-text { font-size: 1.1rem; }
+}
+
+/* High-prominence Date & Time Card in Info Section */
+.info-card.info-card-datetime {
+    background: linear-gradient(145deg, rgba(30, 90, 45, 0.4), rgba(10, 28, 16, 0.9));
+    border: 2px solid var(--gold);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45), 0 0 30px rgba(255, 215, 0, 0.22);
+    position: relative;
+    overflow: hidden;
+}
+
+.info-card.info-card-datetime::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 20%, rgba(255, 215, 0, 0.12), transparent 50%);
+    pointer-events: none;
+}
+
+.info-card.info-card-datetime:hover {
+    border-color: #ffe066;
+    box-shadow: 0 14px 45px rgba(0, 0, 0, 0.5), 0 0 45px rgba(255, 215, 0, 0.4);
+}
+
+.datetime-banner {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 14px;
+    position: relative;
+    z-index: 2;
+}
+
+.datetime-date-badge {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.16), rgba(0, 0, 0, 0.45));
+    border: 1.5px solid rgba(255, 215, 0, 0.6);
+    border-radius: 16px;
+    padding: 16px 18px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.datetime-day-tag {
+    display: block;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 2.2px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.datetime-date-main {
+    display: block;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.55rem;
+    color: #ffffff;
+    letter-spacing: 0.8px;
+    text-shadow: 0 2px 12px rgba(255, 215, 0, 0.45);
+    line-height: 1.25;
+}
+
+@media (min-width: 768px) {
+    .datetime-date-main { font-size: 1.95rem; }
+    .datetime-day-tag { font-size: 0.85rem; }
+}
+
+.datetime-time-badge {
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.45), rgba(8, 24, 12, 0.75));
+    border: 1.5px solid rgba(76, 175, 80, 0.6);
+    border-radius: 16px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.datetime-time-icon {
+    font-size: 2.2rem;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.4));
+    flex-shrink: 0;
+}
+
+.datetime-time-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.datetime-time-main {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.35rem;
+    color: var(--gold);
+    letter-spacing: 0.6px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    line-height: 1.2;
+}
+
+.datetime-time-sub {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 3px;
+    line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+    .datetime-time-main { font-size: 1.6rem; }
+    .datetime-time-sub { font-size: 0.95rem; }
+    .datetime-time-icon { font-size: 2.6rem; }
+}
+
+.datetime-extra-match {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.55), rgba(20, 20, 25, 0.7));
+    border: 1px dashed rgba(255, 215, 0, 0.45);
+    border-radius: 12px;
+    padding: 11px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+}
+
+.datetime-extra-icon {
+    font-size: 1.35rem;
+    flex-shrink: 0;
+}
+
+.datetime-extra-text {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1.45;
+}
+
+.datetime-extra-text strong {
+    color: var(--gold);
 }
 
 .map-container {
