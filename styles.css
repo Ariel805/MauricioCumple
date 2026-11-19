@@ -415,8 +415,17 @@ body {
 .bg-player-info-right {
     right: -18px;
     bottom: 12%;
-    width: 135px;
+    width: 175px;
     animation-delay: 1.8s;
+}
+
+.bg-player-info-center {
+    left: 50%;
+    bottom: 4%;
+    width: 90px;
+    transform: translateX(-50%);
+    animation-name: float-player-mid;
+    animation-delay: 2.6s;
 }
 
 @media (min-width: 768px) {
@@ -426,7 +435,8 @@ body {
     .bg-player-mid-left { left: 20px; width: 280px; }
     .bg-player-mid-right { right: 20px; width: 280px; }
     .bg-player-info-left { left: 16px; width: 210px; }
-    .bg-player-info-right { right: 16px; width: 210px; }
+    .bg-player-info-right { right: 16px; width: 300px; }
+    .bg-player-info-center { width: 125px; }
 }
 
 @media (min-width: 1200px) {
@@ -435,7 +445,8 @@ body {
     .bg-player-mid-left { left: 4%; width: 340px; }
     .bg-player-mid-right { right: 4%; width: 340px; }
     .bg-player-info-left { left: 3%; width: 230px; }
-    .bg-player-info-right { right: 3%; width: 230px; }
+    .bg-player-info-right { right: 3%; width: 360px; }
+    .bg-player-info-center { width: 150px; }
 }
 
 @keyframes float-player {
